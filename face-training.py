@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 import os
 
-path = 'userdata'
+path = '../face-detection-data/userdata'
 detector = cv2.CascadeClassifier("D:\python\Cascade\haarcascade_frontalface_default.xml")
 recognizer = cv2.face.LBPHFaceRecognizer_create() #LBP알고리즘을 이용하기 위한 새 변수를 생성
 

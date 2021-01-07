@@ -26,7 +26,7 @@ while True:
         cv2.rectangle(img,(x,y),(x+w,y+h),(255,255,255),2)
         count+=1 # 총 100장의 사진을 찍게 되는데, 하나를 찍을 때마다 count가 늘어난다.
         #imwrite를 통해서 이미지를 저장한다. 이때 저장되는 이미지는 _로 나뉘어지며, grayscale 이미지가 저장된다.
-        cv2.imwrite("userdata/User_"+str(user_id)+'_'+str(user_name)+'_'+str(count)+'.jpg', gray[y:y+h,x:x+w])
+        cv2.imwrite("../face-detection-data/userdata/User_"+str(user_id)+'_'+str(user_name)+'_'+str(count)+'.jpg', gray[y:y+h,x:x+w])
         cv2.imshow('image', img) #이미지가 찍힐때 마다 찍힌 사진이 출력되어 보여준다. video가 나오지 않고 이미지로 나온다.
     k = cv2.waitKey(50) & 0xff # waitkey안의 time을 늘리면 조금 더 느리게 찍힌다.
     if k == 27: # press 'ESC' to quit # ESC를 누르면 종료
