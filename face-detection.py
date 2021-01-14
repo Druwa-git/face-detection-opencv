@@ -21,7 +21,7 @@ while True:
         scaleFactor=1.2, #이미지 피라미드에 사용하는 scalefactor
         #scale 안에 들어가는 이미지의 크기가 1.2씩 증가 즉 scale size는 그대로
         # 이므로 이미지가 1/1.2 씩 줄어서 scale에 맞춰지는 것이다.
-        minNeighbors=3, #최소 가질 수 있는 이웃으로 3~6사이의 값을 넣어야 detect가 더 잘된다고 한다.
+        minNeighbors=20, #최소 가질 수 있는 이웃으로 3~6사이의 값을 넣어야 detect가 더 잘된다고 한다.
         #Neighbor이 너무 크면 알맞게 detect한 rectangular도 지워버릴 수 있으며,
         #너무 작으면 얼굴이 아닌 여러개의 rectangular가 생길 수 있다.
         #만약 이 값이 0이면, scale이 움직일 때마다 얼굴을 검출해 내는 rectangular가 한 얼굴에

@@ -1,17 +1,25 @@
 import numpy as np
 import cv2
 
+f_read = open('user_count.txt', 'r')
+user_count = int(f_read.readline())
+print("Register User :",user_count)
+f_read.close()
 #데이터베이스에 올릴  이름과 id를 입력받음
 user_name = input("Please write your name : ")
-user_id = input("Please write your id : ")
+f_write = open('user_name.txt', 'a')
+f_write.write(user_name+'\n')
+f_write.close()
+user_id = user_count + 1
+f_write = open('user_count.txt', 'w')
+f_write.write(str(user_id))
+f_write.close()
 detected_data = cv2.CascadeClassifier('D:\python\Cascade\haarcascade_frontalface_default.xml')
-
 cap = cv2.VideoCapture(0)
 cap.set(3,1280)
 cap.set(4,720)
-
-count = 0
 interrupt_flag = 0 # ESC를 입력했을 경우에 flag가 활성화 됨
+count = 0
 while True:
     ret, img = cap.read()
     #img = cv2.flip(img, 1) # 상하반전
@@ -39,5 +47,7 @@ if interrupt_flag == 1:
     print("\nFinish by interrupt ESC.\n")
 else :
     print("\nComplete to save data.\n")
+
+
 cap.release()
 cv2.destroyAllWindows()
